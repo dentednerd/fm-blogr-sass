@@ -1,0 +1,365 @@
+$body-bg-dark: hsl(237, 17%, 21%);
+$body-bg-light: hsl(237, 23%, 32%);
+$body-copy: hsl(207, 13%, 34%);
+$cta-text: hsl(356, 100%, 66%);
+$cta-bg-dark: hsl(353, 100%, 62%);
+$cta-bg-light: hsl(13, 100%, 72%);
+$cta-hover-bg: hsl(355, 100%, 74%);
+$footer-bg: hsl(240, 10%, 16%);
+$footer-text: hsl(240, 2%, 79%);
+$headings: hsl(208, 49%, 24%);
+$white: hsl(0, 0%, 100%);
+$translucent: rgba(255,255,255,0.25);
+$shadow: rgba(0,0,0,0.25);
+
+@mixin wide-letter {
+  letter-spacing: 0.0625rem;
+}
+
+@mixin narrow-letter {
+  letter-spacing: -0.1rem;
+}
+
+@mixin whitespace {
+  padding: 18rem 9rem;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $white;
+  color: $body-copy;
+  font-family: 'Overpass', sans-serif;
+  font-size: 16px;
+}
+
+button {
+  border: solid 1px $white;
+  background-color: $white;
+  color: $cta-text;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 2.5rem;
+  margin: 0 0.5rem;
+  width: 10rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $translucent;
+    border: solid 1px transparent;
+    color: $white;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $cta-bg-light;
+    }
+  }
+
+  &.no-bg {
+    background-color: transparent;
+    color: $white;
+    border: none;
+  }
+}
+
+header {
+  position: relative;
+  background: linear-gradient(to left, $cta-bg-dark, $cta-bg-light);
+  text-align: center;
+  color: $white;
+  border-bottom-left-radius: 6rem;
+
+  section.cta {
+    background: url('./images/bg-pattern-intro.svg');
+    background-size: 225%;
+    background-position: 25% 52.5%;
+    background-repeat: no-repeat;
+    height: 40rem;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding: 3rem 9rem;
+
+      img.logo {
+        margin-right: 5rem;
+      }
+
+      div {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        ul {
+          list-style-type: none;
+          display: flex;
+          flex-flow: row nowrap;
+
+          li {
+            font-family: 'Ubuntu', sans-serif;
+            margin-right: 1rem;
+            position: relative;
+
+            div.nav-item {
+              display: flex;
+              flex-flow: row nowrap;
+              justify-content: center;
+              align-items: center;
+              width: 10rem;
+              margin: 0 auto;
+
+              &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+              }
+
+              &::after {
+                content:'';
+                display: block;
+                height: 0.5rem;
+                width: 0.5rem;
+                margin: 0 0.75rem;
+                background-image: url('./images/icon-arrow-light.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                transform: scaleY(1);
+                transition: transform 0.2s ease-in-out;
+              }
+            }
+
+            ul.nav-item-menu {
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 100%;
+              list-style-type: none;
+              display: flex;
+              flex-flow: column nowrap;
+              background-color: $white;
+              color: $body-copy;
+              border-radius: 0.5rem;
+              margin-top: 1rem;
+              padding: 1rem;
+              transform: scaleY(0);
+              transition: transform 0.2s ease-in-out;
+              transform-origin: top center;
+              box-shadow: 0 0 1rem $shadow;
+
+              li {
+                line-height: 2rem;
+              }
+            }
+
+            &.open {
+              div.nav-item::after {
+                transform: scaleY(-1);
+                transition: transform 0.2s ease-in-out;
+              }
+
+              ul.nav-item-menu {
+                transform: scaleY(1);
+                transition: transform 0.2s ease-in-out;
+
+                li:hover {
+                  font-weight: 500;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    h1 {
+      font-family: 'Overpass', sans-serif;
+      font-size: 4rem;
+      font-weight: 600;
+      letter-spacing: -0.1rem;
+      line-height: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+.two-halves {
+  display: flex;
+  flex-flow: row nowrap;
+
+  div {
+    flex: 1;
+  }
+}
+
+section {
+  background-color: $white;
+  line-height: 1.75rem;
+
+  div.content {
+    h3 {
+      @include wide-letter;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      @include wide-letter;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+section.future {
+  @include whitespace;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  line-height: 1.75rem;
+  background-image: url('./images/illustration-editor-desktop.svg');
+  background-position: 150% center;
+  background-repeat: no-repeat;
+
+  h2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    letter-spacing: 0;
+    height: 18rem;
+    margin-bottom: 6rem;
+  }
+}
+
+section.infrastructure {
+  position: relative;
+  background-color: $body-bg-light;
+  background-image: url('./images/bg-pattern-circles.svg');
+  background-repeat: no-repeat;
+  background-position: -55% 90%;
+  color: $white;
+  border-bottom-left-radius: 6rem;
+  border-top-right-radius: 6rem;
+
+  div.content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin: 7rem 0;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      @include wide-letter;
+      padding-right: 9rem;
+      margin-bottom: 0;
+    }
+  }
+
+  div.illustration {
+    position: absolute;
+    top: -4.5rem;
+    left: 6rem;
+  }
+}
+
+section.tooling {
+  background-image: url('./images/illustration-laptop-desktop.svg');
+  background-position: -62% center;
+  background-repeat: no-repeat;
+  padding: 18rem 3rem;
+}
+
+footer {
+  background-color: $footer-bg;
+  color: $footer-text;
+  padding: 3rem 9rem;
+  border-top-right-radius: 6rem;
+  font-family: 'Ubuntu', sans-serif;
+
+  nav {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+
+    div {
+      display: flex;
+      flex-flow: column nowrap;
+      line-height: 2rem;
+
+      h3 {
+        color: $white;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+      a {
+        font-weight: 300;
+        letter-spacing: 0;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .attribution {
+    margin-top: 3rem;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: $cta-bg-light;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+
