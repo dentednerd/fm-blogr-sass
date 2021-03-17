@@ -414,6 +414,7 @@ nav div.dropdown ul li.open ul.nav-item-menu li:hover {
   nav div.login-buttons button {
     border: none;
     color: #1f3f5b;
+    font-size: 1.25rem;
   }
   nav div.login-buttons button.signup {
     background-image: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));

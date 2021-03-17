@@ -136,6 +136,7 @@ nav {
       button {
         border: none;
         color: $headings;
+        font-size: 1.25rem;
 
         &.signup {
           background-image: linear-gradient(to right, $cta-bg-light, $cta-bg-dark);
