@@ -1,0 +1,54 @@
+@import 'variables';
+
+header {
+  background: linear-gradient(to left, $cta-bg-dark, $cta-bg-light);
+  text-align: center;
+  color: $white;
+  border-bottom-left-radius: 6rem;
+  overflow: hidden;
+
+  @media(max-width:767px) {
+    background: linear-gradient(to top left, $cta-bg-dark, $cta-bg-light);
+  }
+
+  section.cta {
+    background: url('./images/bg-pattern-intro.svg');
+    background-size: 225%;
+    background-position: 25% 52.5%;
+    background-repeat: no-repeat;
+    height: 40rem;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    @media(max-width: 767px) {
+      background-size: 375%;
+      background-position: -23rem 35%;
+      background-repeat: no-repeat;
+      padding: 4rem 2rem 0;
+      height: 36rem;
+    }
+
+    h1 {
+      font-family: 'Overpass', sans-serif;
+      font-size: 4rem;
+      font-weight: 600;
+      letter-spacing: -0.1rem;
+      line-height: 4rem;
+      margin-bottom: 1.5rem;
+
+      @media(max-width: 767px) {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@mixin wide-letter {
+  letter-spacing: 0.0625rem;
+}
+
+@mixin narrow-letter {
+  letter-spacing: -0.1rem;
+}
+
+@mixin whitespace {
+  padding: 18rem 9rem;
+
+  @media(max-width: 767px) {
+    padding: 15rem 0;
+  }
+}
