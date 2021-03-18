@@ -52,6 +52,10 @@ function onClick() {
 
 Used Sass modules with the deprecated `@import` syntax, splitting out resets, variables, mixins and some of the heavier elements. This has been a useful experience, but I think I still have some conventions to learn.
 
+Started out using flexbox, but switched to grid later on for better responsivity.
+
+I haven't seen any solutions that have completely nailed the size and position of the background image in the CTA. I know I haven't either, but I've done my best!
+
 Made use of the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) and [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) extensions for VSCode in development.
 
 ### Continued development
