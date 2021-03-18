@@ -10,7 +10,7 @@ button {
   background-color: white;
   color: #ff525d;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   padding: 0.75rem 0;
   border-radius: 2.5rem;
@@ -24,7 +24,6 @@ button {
   button {
     margin: 0 0.25rem;
     margin-bottom: 0.5rem;
-    font-size: 1rem;
     padding: 1rem 0;
     width: 9rem;
   }
@@ -76,7 +75,7 @@ header section.cta {
   background-size: 225%;
   background-position: 25% 52.5%;
   background-repeat: no-repeat;
-  height: 40rem;
+  height: 38rem;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -591,8 +590,9 @@ section {
 section div.content h3 {
   letter-spacing: 0.0625rem;
   color: #1f3f5b;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 1023px) {
@@ -623,9 +623,10 @@ section.future {
       grid-template-rows: repeat(3, auto);
   line-height: 1.75rem;
   background-image: url("./images/illustration-editor-desktop.svg");
-  background-size: 57.5%;
-  background-position: 137.5% center;
+  background-size: 60%;
+  background-position: 150% center;
   background-repeat: no-repeat;
+  padding: 4rem 0;
 }
 
 @media (max-width: 1023px) {
@@ -659,10 +660,10 @@ section.future h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2.25rem;
-  line-height: 2.75rem;
+  font-size: 3rem;
+  line-height: 3.25rem;
   letter-spacing: 0;
-  height: 16rem;
+  height: 12rem;
   text-align: center;
   width: 100%;
   color: #1f3f5b;
@@ -721,7 +722,7 @@ section.future div.future-bottom {
   grid-column: 1 / 5;
   -ms-grid-row: 3;
   grid-row: 3;
-  height: 16rem;
+  height: 12rem;
 }
 
 @media (max-width: 1023px) {

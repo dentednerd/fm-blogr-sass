@@ -25,8 +25,9 @@ section {
     h3 {
       @include wide-letter;
       color: $headings;
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      line-height: 2.25rem;
+      margin-bottom: 2rem;
 
       @media(max-width: 1023px) {
         font-size: 2rem;
@@ -51,9 +52,10 @@ section.future {
   grid-template-rows: repeat(3, auto);
   line-height: 1.75rem;
   background-image: url('./images/illustration-editor-desktop.svg');
-  background-size: 57.5%;
-  background-position: 137.5% center;
+  background-size: 60%;
+  background-position: 150% center;
   background-repeat: no-repeat;
+  padding: 4rem 0;
 
   @media(max-width: 1023px) {
     display: flex;
@@ -68,10 +70,10 @@ section.future {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    font-size: 3rem;
+    line-height: 3.25rem;
     letter-spacing: 0;
-    height: 16rem;
+    height: 12rem;
     text-align: center;
     width: 100%;
     color: $headings;
@@ -115,7 +117,7 @@ section.future {
   div.future-bottom {
     grid-column: 1 / 5;
     grid-row: 3;
-    height: 16rem;
+    height: 12rem;
 
     @media(max-width: 1023px) {
       display: none;
