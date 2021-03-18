@@ -13,7 +13,7 @@ nav {
   align-items: center;
   padding: 3rem 9rem;
 
-  @media(max-width: 767px) {
+  @media(max-width: 1023px) {
     padding: 3rem 1.5rem;
   }
 
@@ -30,7 +30,7 @@ nav {
     height: 1rem;
     width: 2rem;
 
-    @media(max-width: 767px) {
+    @media(max-width: 1023px) {
       display: block;
     }
   }
@@ -125,7 +125,7 @@ nav {
   }
 
   div.login-buttons {
-    @media(max-width: 767px) {
+    @media(max-width: 1023px) {
       border-top: solid 1px $footer-text;
       display: flex;
       flex-flow: column nowrap;
@@ -147,7 +147,7 @@ nav {
   }
 }
 
-@media(max-width: 767px) {
+@media(max-width: 1023px) {
   nav {
     div.dropdown {
       position: absolute;

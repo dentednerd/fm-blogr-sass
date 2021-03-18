@@ -7,7 +7,7 @@ footer {
   border-top-right-radius: 6rem;
   font-family: 'Ubuntu', sans-serif;
 
-  @media(max-width: 767px) {
+  @media(max-width: 1023px) {
     padding: 5rem 0;
   }
 
@@ -15,7 +15,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, auto);
 
-    @media(max-width: 767px) {
+    @media(max-width: 1023px) {
       display: flex;
       flex-flow: column nowrap;
       text-align: center;
@@ -31,7 +31,7 @@ footer {
       flex-flow: column nowrap;
       line-height: 2rem;
 
-      @media(max-width: 767px) {
+      @media(max-width: 1023px) {
         margin-bottom: 3rem;
       }
 

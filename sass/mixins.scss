@@ -6,10 +6,7 @@
   letter-spacing: -0.1rem;
 }
 
-@mixin whitespace {
-  padding: 18rem 9rem;
-
-  @media(max-width: 767px) {
-    padding: 15rem 0;
-  }
+@mixin four-column-grid {
+  display: grid;
+  grid-template-columns: 9rem 1fr 1fr 9rem;
 }
