@@ -2,40 +2,47 @@
 @import 'mixins';
 
 nav {
+  display: grid;
+  grid-template-columns: 9rem 7rem calc(50% - 16rem) calc(50% - 9rem) 9rem;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   text-align: left;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem 9rem;
+  padding: 3rem 0;
 
-  @media(max-width: 1023px) {
-    padding: 3rem 1.5rem;
+  @media(max-width: 1279px) {
+    grid-template-columns: 2rem 7rem 1fr 2rem 2rem;
   }
 
-  img.logo {
-    margin-right: 5rem;
+  div.logo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2;
   }
 
   div.hamburger {
-    display: none;
-    background-image: url('./images/icon-hamburger.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 1rem;
-    width: 2rem;
+    grid-column: 5;
 
-    @media(max-width: 1023px) {
-      display: block;
+    @media(max-width: 1279px) {
+      grid-column: 4;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      align-items: center;
+      height: 2.5rem;
+      width: 2rem;
+      background-image: url('./images/icon-hamburger.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
     }
   }
 
   div.dropdown {
+    grid-column: 3;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -50,7 +57,6 @@ nav {
 
       li {
         font-family: 'Ubuntu', sans-serif;
-        margin-right: 1rem;
         position: relative;
 
         div.nav-item {
@@ -124,8 +130,22 @@ nav {
     }
   }
 
-  div.login-buttons {
-    @media(max-width: 1023px) {
+  div.desktop-login-buttons {
+    grid-column: 4;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    @media(max-width: 1279px) {
+      display: none
+    }
+  }
+
+  div.mobile-login-buttons{
+    display: none;
+
+    @media(max-width: 1279px) {
       border-top: solid 1px $footer-text;
       display: flex;
       flex-flow: column nowrap;
@@ -147,9 +167,10 @@ nav {
   }
 }
 
-@media(max-width: 1023px) {
+@media(max-width: 1279px) {
   nav {
     div.dropdown {
+      grid-column: 1 / 6;
       position: absolute;
       top: 7rem;
       left: 0;
