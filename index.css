@@ -140,9 +140,7 @@ footer {
 }
 
 footer div.grid {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[4];
       grid-template-columns: repeat(4, auto);
 }
 
