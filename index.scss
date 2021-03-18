@@ -13,25 +13,12 @@ body {
   font-size: 16px;
 }
 
-.two-halves {
-  display: flex;
-  flex-flow: row nowrap;
-
-  @media(max-width: 767px) {
-    flex-flow: column-reverse nowrap;
-  }
-
-  div {
-    flex: 1;
-  }
-}
-
 section {
   background-color: $white;
   line-height: 1.75rem;
 
   div.content {
-    @media(max-width: 767px) {
+    @media(max-width: 1023px) {
       text-align: center;
     }
 
@@ -41,7 +28,7 @@ section {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
 
-      @media(max-width: 767px) {
+      @media(max-width: 1023px) {
         font-size: 2rem;
         line-height: 2.25rem;
         margin-bottom: 2rem;
@@ -52,7 +39,7 @@ section {
       @include wide-letter;
       margin-bottom: 3rem;
 
-      @media(max-width: 767px) {
+      @media(max-width: 1023px) {
         padding: 0 1rem;
       }
     }
@@ -60,24 +47,23 @@ section {
 }
 
 section.future {
-  @include whitespace;
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
+  @include four-column-grid;
+  grid-template-rows: repeat(3, auto);
   line-height: 1.75rem;
   background-image: url('./images/illustration-editor-desktop.svg');
-  background-position: 150% center;
+  background-size: 57.5%;
+  background-position: 137.5% center;
   background-repeat: no-repeat;
 
-  @media(max-width: 767px) {
+  @media(max-width: 1023px) {
+    display: flex;
+    flex-flow: column nowrap;
     background-image: none;
+    margin-bottom: 18rem;
   }
 
   h2 {
-    position: absolute;
-    top: 0;
-    left: 0;
+    grid-column: 1 / 5;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -85,29 +71,61 @@ section.future {
     font-size: 2.25rem;
     line-height: 2.75rem;
     letter-spacing: 0;
-    height: 18rem;
+    height: 16rem;
     text-align: center;
     width: 100%;
+    color: $headings;
 
-    @media(max-width: 767px) {
+    @media(max-width: 1023px) {
+      order: 1;
       font-size: 1.75rem;
+      height: auto;
+      padding-top: 6rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  div.content {
+    grid-column: 2;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media(max-width: 1023px) {
+      order: 3;
+      padding-top: 2rem;
     }
   }
 
   div.illustration {
+    order: 2;
+
     img {
       display: none;
 
-      @media(max-width: 767px) {
+      @media(max-width: 1023px) {
         display: block;
         width: 100%;
-        margin-bottom: 3rem;
+
       }
+    }
+  }
+
+  div.future-bottom {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    height: 16rem;
+
+    @media(max-width: 1023px) {
+      display: none;
     }
   }
 }
 
 section.infrastructure {
+  @include four-column-grid;
+  grid-template-rows: repeat(1, auto);
   position: relative;
   background-color: $body-bg-dark;
   background-image: url('./images/bg-pattern-circles.svg');
@@ -117,19 +135,24 @@ section.infrastructure {
   border-bottom-left-radius: 6rem;
   border-top-right-radius: 6rem;
 
-  @media(max-width: 767px) {
+  @media(max-width: 1023px) {
+    min-height: 36rem;
     background-size: 160%;
     background-position: center -15.5rem;
+    display: flex;
+    flex-flow: column nowrap;
   }
 
   div.content {
+    grid-column: 3;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     margin: 7rem 0;
 
-    @media(max-width: 767px) {
-      margin: 13rem 0 6rem 0;
+    @media(max-width: 1023px) {
+      margin: 0;
+      align-self: flex-end;
     }
 
     h2 {
@@ -137,7 +160,7 @@ section.infrastructure {
       font-weight: 600;
       margin-bottom: 1.5rem;
 
-      @media(max-width: 767px) {
+      @media(max-width: 1023px) {
         font-size: 2.5rem;
         line-height: 3rem;
       }
@@ -148,7 +171,7 @@ section.infrastructure {
       padding-right: 9rem;
       margin-bottom: 0;
 
-      @media(max-width: 767px) {
+      @media(max-width: 1023px) {
         padding: 0 2rem;
       }
     }
@@ -159,29 +182,43 @@ section.infrastructure {
     top: -4.5rem;
     left: 6rem;
 
-    @media(max-width: 767px) {
-      top: -12rem;
+    img {
+      max-width: calc(100% - 8rem);
+    }
+
+    @media(max-width: 1023px) {
+      top: -40%;
       left: 0;
+      width: 100%;
+      text-align: center;
 
       img {
-        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
       }
     }
   }
 }
 
 section.tooling {
+  display: grid;
+  grid-template-rows: repeat(1, auto);
+  grid-template-columns: 9rem 1fr 1fr 9rem;
   background-image: url('./images/illustration-laptop-desktop.svg');
-  background-position: -62% center;
+  background-size: 70%;
+  background-position: -65% 35%;
   background-repeat: no-repeat;
-  padding: 18rem 3rem;
+  padding: 17rem 3rem;
 
-  @media(max-width: 767px) {
+  div.content {
+    grid-column: 3;
+  }
+
+  @media(max-width: 1023px) {
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: none;
     padding: 3rem 0;
-
-    &.two-halves {
-      flex-flow: column nowrap;
-    }
 
     div.content {
       padding-top: 3rem;
@@ -190,7 +227,6 @@ section.tooling {
         padding: 0 2rem;
       }
     }
-
   }
 
   div.illustration {
@@ -200,7 +236,7 @@ section.tooling {
     img {
       display: none;
 
-      @media(max-width: 767px) {
+      @media(max-width: 1023px) {
         display: block;
         width: calc(100% + 8rem);
         transform: translateX(-4rem);
